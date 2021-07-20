@@ -1,0 +1,32 @@
+let sum = 0;
+// Product object
+function Goods(name,price,amount,discount){
+this.name = name;
+this.price = price;
+this.amount = amount;
+this.discount = discount;
+// this.add = fun();
+}
+// Define a declarative product instance
+let goods1 = new Goods("pen",100,1,50);
+let goods2 = new Goods("Paper towel",10,1,50);
+let goods3 = new Goods("exercise book",100,2,30);
+
+// Create a function for the total price calculation
+function totalPrice(){
+// put the object in an array
+let arr = new Array(goods1,goods2,goods3);
+// add each item price by traversing
+for(let i in arr){
+                        
+sum = sum + (arr[i].amount * (arr[i].price*(1-(arr[i].discount/100))) );
+}
+console.log(sum);
+}
+
+console.log(goods1);
+console.log(goods2);
+console.log(goods3);
+totalPrice();
+
+console.log("After discount your bill is: " + totalPrice());
